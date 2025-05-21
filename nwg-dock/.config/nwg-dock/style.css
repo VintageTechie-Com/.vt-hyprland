@@ -1,0 +1,41 @@
+window {
+  background: #282a36; /* Dracula background */
+  border-radius: 16px;  /* Rounder corners */
+  border-style: none;
+  border-width: 1px;
+  border-color: #44475a;
+}
+
+#box {
+  padding: 12px;
+}
+
+#active {
+  border-bottom: solid 2px;
+  border-color: #bd93f9; /* Dracula purple for active indicator */
+}
+
+button, image {
+  background: none;
+  border-style: none;
+  box-shadow: none;
+  color: #f8f8f2; /* Dracula foreground */
+}
+
+button {
+  padding: 6px;
+  margin-left: 6px;
+  margin-right: 6px;
+  border-radius: 12px; /* More rounded buttons */
+  color: #f8f8f2;
+  font-size: 13px;
+}
+
+button:hover {
+  background-color: #44475a; /* Dracula selection */
+  border-radius: 12px;
+}
+
+button:focus {
+  box-shadow: none;
+}

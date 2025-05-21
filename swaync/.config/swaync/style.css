@@ -1,0 +1,39 @@
+* {
+  all: unset;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 14px;
+  color: #f8f8f2;
+}
+
+window {
+  background-color: #282a36;
+  border: 2px solid #bd93f9;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.notification {
+  background-color: #44475a;
+  margin: 8px;
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 4px solid #ff79c6;
+}
+
+.notification.critical {
+  border-left: 4px solid #ff5555;
+}
+
+.notification.low {
+  border-left: 4px solid #8be9fd;
+}
+
+.notification-header {
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #bd93f9;
+}
+
+.notification-body {
+  color: #f8f8f2;
+}

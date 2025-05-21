@@ -1,0 +1,47 @@
+version = "1.1.16"
+
+[format]
+dedup = true
+dedup_inactive_fullscreen = false
+delim = " "
+client = "{icon}{delim}"
+client_active = "{icon}"
+workspace = "{id}: {clients}"
+workspace_empty = "{id}"
+client_dup = "{icon}{counter_sup}{delim}"
+client_dup_fullscreen = "[{icon}]{delim}{icon}{counter_unfocused_sup}"
+client_fullscreen = "[{icon}]{delim}"
+
+#[workspaces_name]
+#1 = "home"
+#2 = "dev"
+#3 = "games"
+#4 = "web"
+#5 = "term"
+
+[class]
+DEFAULT = "󰘚"  # fallback box
+
+"(?i)com\\.mitchellh\\.ghostty" = ""
+"(?i)code-oss" = ""
+"(?i)code" = ""
+"(?i)steam" = ""
+"(?i)brave-browser" = ""
+"(?i)firefox" = ""
+"(?i)nautilus" = ""
+"(?i)discord" = ""
+"(?i)kitty" = ""
+"(?i)alacritty" = ""
+"(?i)Spotify" = ""
+
+[exclude]
+"(?i)flameshot" = ".*"
+"(?i)nm-connection-editor" = ".*"
+"(?i)pavucontrol" = ".*"
+"(?i)nwg-dock-hyprland" = ".*"
+"(?i)hyprpaper" = ".*"
+"(?i)swaync" = ".*"
+
+[title_in_class."(?i)firefox"]
+"(?i)youtube" = ""
+"(?i)github" = ""

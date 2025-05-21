@@ -1,0 +1,153 @@
+@import "colors.css";
+
+* {
+  font-family: "MesloLGS Nerd Font", "Font Awesome 6 Free", "Font Awesome 6 Brands", "Adwaita Mono", monospace;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+window#waybar {
+  background: @background-darker;
+  color: @foreground;
+  border-bottom: 2px solid @selection;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px @shadow;
+  opacity: 1.0;
+}
+
+#window {
+  margin: 8px;
+  padding: 0;
+}
+
+#workspaces button {
+  padding: 0 10px;
+  background: @selection;
+  color: @foreground;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+#workspaces button:hover {
+  background: @comment;
+  box-shadow: 0 0 6px @hover-glow;
+}
+
+#workspaces button.active {
+  background: @purple;
+  color: @background;
+}
+
+#workspaces button.urgent {
+  background: @red;
+  color: @foreground;
+}
+
+button {
+  border: none;
+  border-radius: 12px;
+  box-shadow: none;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background: @hover-bg;
+  color: @cyan;
+  border-top: 2px solid @cyan;
+  box-shadow: 0 0 6px @hover-glow;
+}
+
+#pulseaudio,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#temperature.cpu,
+#custom-nvidia {
+  color: @foreground;
+  font-weight: bold;
+  padding-right: 12px;
+}
+
+#backlight,
+#wireplumber,
+#tray,
+#network,
+#mode,
+#scratchpad {
+  margin: 2px 4px;
+  padding: 0 6px;
+  border-radius: 12px;
+  background-color: @selection;
+  box-shadow: 0 2px 6px @shadow;
+}
+
+#clock {
+  background: @comment;
+  border-radius: 12px;
+  padding: 0 8px;
+  box-shadow: 0 0 6px @shadow;
+}
+
+#clock.date {
+  color: @yellow;
+}
+
+#pulseaudio {
+  color: @foreground;
+}
+
+#idle_inhibitor {
+  margin-right: 12px;
+  color: @green;
+}
+
+#pulseaudio-slider {
+  min-height: 15px;
+  min-width: 200px;
+}
+
+#pulseaudio-slider slider {
+  opacity: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+  min-height: 13px;
+  min-width: 80px;
+  border-radius: 6px;
+  background-color: #1e1f29; /* solid */
+}
+
+#pulseaudio-slider highlight {
+  border-radius: 6px;
+  background-color: @comment;
+}
+
+#custom-power,
+#power-profiles-daemon {
+  font-size: 14px;
+  font-family: "Font Awesome 6 Free", sans-serif;
+  padding: 0 5px;
+}
+
+#power-profiles-daemon.performance {
+  color: @red;
+}
+#power-profiles-daemon.balanced {
+  color: @yellow;
+}
+#power-profiles-daemon.power-saver {
+  color: @green;
+}
+
+#taskbar button.active {
+  background: @purple;
+  color: @background;
+  border-radius: 12px;
+  box-shadow: 0 0 6px rgba(189, 147, 249, 0.3); /* purple glow */
+}

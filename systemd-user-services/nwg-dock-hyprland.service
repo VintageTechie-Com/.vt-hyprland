@@ -1,0 +1,13 @@
+[Unit]
+ConditionEnvironment=HYPRLAND_INSTANCE_SIGNATURE
+Description=nwg-dock-hyprland
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/nwg-dock-hyprland -d
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=graphical-session.target
