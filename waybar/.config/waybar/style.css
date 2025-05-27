@@ -151,3 +151,28 @@ button:hover {
   border-radius: 12px;
   box-shadow: 0 0 6px rgba(189, 147, 249, 0.3); /* purple glow */
 }
+#cpu:hover,
+#memory:hover,
+#disk:hover,
+#temperature:hover,
+#temperature.cpu:hover,
+#custom-nvidia:hover,
+#backlight:hover,
+#wireplumber:hover,
+#tray:hover,
+#network:hover,
+#mode:hover,
+#scratchpad:hover,
+#idle_inhibitor:hover,
+#custom-power:hover,
+#power-profiles-daemon:hover,
+#pulseaudio:hover,
+#clock:hover,
+#battery:hover {
+  background-color: @hover-bg;
+  color: @cyan;
+  box-shadow: 0 0 6px @hover-glow;
+  border-top: 2px solid @cyan;
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+}
