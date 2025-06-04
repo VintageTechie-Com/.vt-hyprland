@@ -138,7 +138,7 @@
     "format": "GPU: {}°C"
 },
 "custom/launcher": {
-  "format": "sssssssssssssssssssssssssssssssssssssssssss",  // or use a different icon like   
+  "format": "",  // or use a different icon like   
   "tooltip": "Open App Drawer",
   "on-click": "nwg-drawer",
   "on-click-right": "nwg-drawer-config",
