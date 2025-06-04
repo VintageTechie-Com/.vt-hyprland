@@ -1,4 +1,3 @@
-
 @define-color background-darker rgba(30, 31, 41, 230);
 @define-color background #282a36;
 @define-color selection #44475a;
@@ -11,3 +10,6 @@
 @define-color purple #bd93f9;
 @define-color red #ff5555;
 @define-color yellow #f1fa8c;
+@define-color shadow rgba(0, 0, 0, 0.6);
+@define-color hover-bg #343746;
+@define-color hover-glow @purple;

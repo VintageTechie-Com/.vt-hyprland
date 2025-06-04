@@ -10,6 +10,7 @@
   "margin-right": 10,
   "spacing": 5, // Gaps between modules (4px)
   "modules-left": [
+    "custom/launcher",
     "hyprland/workspaces"
   ],
   "modules-center": [
@@ -24,6 +25,7 @@
     "pulseaudio",
     "temperature#cpu",
      "custom/nvidia",    
+     "memory",
     "power-profiles-daemon",
     "custom/power"
   ],
@@ -100,7 +102,7 @@
     "on-click-right": "amixer sset Master toggle"
   },
   "memory": {
-    "interval": 30,
+    "interval": 5,
     "format": "  {used:0.2f} / {total:0.0f} GB",
     "on-click": "alacritty -e btop"
   },
@@ -134,7 +136,15 @@
     "exec": "~/.config/waybar/scripts/nvidia-temp.sh",
     "interval": 5,
     "format": "GPU: {}°C"
+},
+"custom/launcher": {
+  "format": "sssssssssssssssssssssssssssssssssssssssssss",  // or use a different icon like   
+  "tooltip": "Open App Drawer",
+  "on-click": "nwg-drawer",
+  "on-click-right": "nwg-drawer-config",
+  "class": "drawer-button"
 }
+
 
 
 

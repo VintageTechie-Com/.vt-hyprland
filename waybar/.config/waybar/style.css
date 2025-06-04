@@ -176,3 +176,26 @@ button:hover {
   border-radius: 12px;
   transition: all 0.2s ease-in-out;
 }
+#custom-launcher {
+  padding: 0 10px;
+}
+
+.drawer-button {
+  margin-left: 16px;
+  margin-right: 16px;
+  padding-left: 12px;
+  padding-right: 12px;
+  background-color: @selection;
+  color: @foreground;
+  border-radius: 12px;
+  font-weight: bold;
+  font-family: "Font Awesome 6 Free", "MesloLGS Nerd Font", monospace;
+}
+
+.drawer-button:hover {
+  background-color: @hover-bg;
+  color: @cyan;
+  box-shadow: 0 0 6px @hover-glow;
+  border-top: 2px solid @cyan;
+}
+
