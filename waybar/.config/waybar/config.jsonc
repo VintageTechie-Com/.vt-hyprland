@@ -121,11 +121,9 @@
     "interval": 600
   },
   "custom/power": {
-    "format": "<span font_family='JetBrainsMono Nerd Font' size='large'></span>",
-    "tooltip": false,
-    "exec": "echo \u200B",  // Zero-width space (invisible, but non-empty)
-    "on-click": "~/.config/waybar/scripts/power_menu.sh",
-    "interval": 9999
+    "format": "⏻",
+    "tooltip": "Power Menu",
+    "on-click": "wlogout"
   },
   "temperature#cpu": {
     "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
