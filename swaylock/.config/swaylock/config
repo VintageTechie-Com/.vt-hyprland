@@ -1,0 +1,33 @@
+# ~/.config/swaylock/config
+
+# Background and blur
+effect-blur=7x5
+effect-vignette=0.5:0.5
+screenshots
+clock
+indicator
+indicator-radius=120
+indicator-thickness=10
+
+# Font and text
+font=JetBrainsMono Nerd Font
+timestr=%I:%M %p
+datestr=%A, %B %d
+
+# Colors - Dracula palette
+ring-color=bd93f9
+inside-color=282a3
+line-color=44475a
+separator-color=44475a
+text-color=f8f8f2
+key-hl-color=50fa7b
+bs-hl-color=ff5555
+inside-clear-color=6272a4
+ring-clear-color=8be9fd
+line-clear-color=8be9fd
+inside-ver-color=50fa7b
+ring-ver-color=50fa7b
+line-ver-color=50fa7b
+inside-wrong-color=ff5555
+ring-wrong-color=ff5555
+line-wrong-color=ff5555

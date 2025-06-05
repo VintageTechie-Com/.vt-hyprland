@@ -1,0 +1,25 @@
+{
+  "label": "shutdown",
+  "action": "/usr/bin/systemctl poweroff",
+  "text": "Shutdown",
+  "keybind": "s"
+}
+{
+  "label": "reboot",
+  "action": "/usr/bin/systemctl reboot",
+  "text": "Reboot",
+  "keybind": "r"
+}
+{
+  "label": "suspend",
+  "action": "/usr/bin/systemctl suspend",
+  "text": "Suspend",
+  "keybind": "u"
+}
+{
+  "label": "logout",
+  "action": "/usr/bin/hyprctl dispatch exit",
+  "text": "Logout",
+  "keybind": "l"
+}
+
