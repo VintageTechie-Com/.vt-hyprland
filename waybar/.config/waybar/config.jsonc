@@ -21,7 +21,7 @@
   ],
   "modules-right": [
     "tray",
-    "pulseaudio/slider",
+    //*"pulseaudio/slider",
     "pulseaudio",
     "temperature#cpu",
      "custom/nvidia",    
