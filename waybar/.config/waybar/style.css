@@ -4,6 +4,7 @@
   font-family: "MesloLGS Nerd Font", "Font Awesome 6 Free", "Font Awesome 6 Brands", "Adwaita Mono", monospace;
   font-size: 16px;
   font-weight: normal;
+  color: @foreground;
 }
 
 window#waybar {
@@ -11,7 +12,7 @@ window#waybar {
   color: @foreground;
   border-bottom: 2px solid @selection;
   border-radius: 12px;
-  box-shadow: 0 4px 8px @shadow;
+  box-shadow: none;
   opacity: 1.0;
 }
 
@@ -20,21 +21,22 @@ window#waybar {
   padding: 0;
 }
 
+/******************* Workspaces *******************/
 #workspaces button {
   padding: 0 10px;
-  background: @selection;
+  background: @selection;         /* darker tab */
   color: @foreground;
   border-radius: 8px;
-  transition: all 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 
 #workspaces button:hover {
-  background: @comment;
-  box-shadow: 0 0 6px @hover-glow;
+  background-color: rgba(61, 174, 233, 0.1);
+  color: #3daee9;
 }
 
 #workspaces button.active {
-  background: @purple;
+  background: @comment;           /* lighter active tab */
   color: @background;
 }
 
@@ -43,20 +45,19 @@ window#waybar {
   color: @foreground;
 }
 
+/******************* Generic buttons *******************/
 button {
   border: none;
   border-radius: 12px;
   box-shadow: none;
-  transition: all 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 
 button:hover {
-  background: @hover-bg;
-  color: @cyan;
-  border-top: 2px solid @cyan;
-  box-shadow: 0 0 6px @hover-glow;
+  color: #3daee9;                   /* subtle hover for all clickable widgets */
 }
 
+/******************* Core modules *******************/
 #pulseaudio,
 #clock,
 #battery,
@@ -67,7 +68,7 @@ button:hover {
 #temperature.cpu,
 #custom-nvidia {
   color: @foreground;
-  font-weight: bold;
+  font-weight: normal;
   padding-right: 12px;
 }
 
@@ -88,29 +89,25 @@ button:hover {
   padding: 0 6px;
   border-radius: 12px;
   background-color: @selection;
-  box-shadow: 0 2px 6px @shadow;
 }
 
+/******************* Clock *******************/
 #clock {
-  background: @comment;
   border-radius: 12px;
   padding: 0 8px;
-  box-shadow: 0 0 6px @shadow;
 }
 
 #clock.date {
   color: @yellow;
 }
 
-#pulseaudio {
-  color: @foreground;
-}
-
+/******************* Misc *******************/
 #idle_inhibitor {
   margin-right: 12px;
   color: @green;
 }
 
+/******************* PulseAudio Slider *******************/
 #pulseaudio-slider {
   min-height: 15px;
   min-width: 200px;
@@ -135,11 +132,17 @@ button:hover {
   background-color: @comment;
 }
 
+/******************* Power Profiles *******************/
 #custom-power,
 #power-profiles-daemon {
   font-size: 14px;
   font-family: "Font Awesome 6 Free", sans-serif;
   padding: 0 5px;
+}
+
+#custom-power:hover,
+#power-profiles-daemon:hover {
+  color: #3daee9;
 }
 
 #power-profiles-daemon.performance {
@@ -152,12 +155,26 @@ button:hover {
   color: @green;
 }
 
+/******************* Taskbar *******************/
 #taskbar button.active {
   background: @purple;
   color: @background;
   border-radius: 12px;
-  box-shadow: 0 0 6px rgba(189, 147, 249, 0.3); /* purple glow */
 }
+
+#taskbar button:hover {
+  color: #3daee9;
+}
+
+/******************* Launcher & Drawer *******************/
+#custom-launcher {
+  padding: 0 10px;
+}
+
+/******************* Hover Backgrounds *******************/
+#pulseaudio:hover,
+#clock:hover,
+#battery:hover,
 #cpu:hover,
 #memory:hover,
 #disk:hover,
@@ -166,25 +183,17 @@ button:hover {
 #custom-nvidia:hover,
 #backlight:hover,
 #wireplumber:hover,
-#tray:hover,
 #network:hover,
 #mode:hover,
 #scratchpad:hover,
 #idle_inhibitor:hover,
 #custom-power:hover,
 #power-profiles-daemon:hover,
-#pulseaudio:hover,
-#clock:hover,
-#battery:hover {
-  background-color: @hover-bg;
-  color: @cyan;
-  box-shadow: 0 0 6px @hover-glow;
-  border-top: 2px solid @cyan;
-  border-radius: 12px;
-  transition: all 0.2s ease-in-out;
-}
-#custom-launcher {
-  padding: 0 10px;
+#tray:hover,
+#custom-launcher:hover,
+.drawer-button:hover {
+  background-color: rgba(61, 174, 233, 0.1);
+  color: #3daee9;
 }
 
 .drawer-button {
@@ -200,9 +209,5 @@ button:hover {
 }
 
 .drawer-button:hover {
-  background-color: @hover-bg;
-  color: @cyan;
-  box-shadow: 0 0 6px @hover-glow;
-  border-top: 2px solid @cyan;
+  color: #3daee9;
 }
-
