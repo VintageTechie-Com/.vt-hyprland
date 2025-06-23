@@ -1,37 +1,26 @@
-# Swaylock Dracula-Themed Style (Waybar-matching)
+# Waybar-matching swaylock theme
 
-# General background
-color = 282a36
+font=JetBrainsMono Nerd Font
+font-size=14
 
-# Ring / Border colors
-inside-color = 282a36
-ring-color = 44475a
-line-color = 282a36
+# Background and ring
+color=181825cc                 # semi-transparent dark background
+inside-color=181825cc
+ring-color=cba6f7              # lavender border
+line-color=cba6f7
 
-# Text
-text-color = f8f8f2
-separator-color = 282a36
+# Keypress feedback
+inside-clear-color=1e1e2ecc
+ring-clear-color=94e2d5
+line-clear-color=94e2d5
 
-# Keypress & backspace feedback
-inside-color-clear = 282a36
-inside-color-ver = 282a36
-inside-color-wrong = 282a36
+inside-ver-color=1e1e2ecc
+ring-ver-color=89dceb
+line-ver-color=89dceb
 
-ring-color-clear = 3daee9
-ring-color-ver = bd93f9
-ring-color-wrong = ff5555
+inside-wrong-color=1e1e2ecc
+ring-wrong-color=f38ba8
+line-wrong-color=f38ba8
 
-text-color-clear = f8f8f2
-text-color-ver = f8f8f2
-text-color-wrong = f8f8f2
-
-line-color-clear = 3daee9
-line-color-ver = bd93f9
-line-color-wrong = ff5555
-
-# Optional dim for visual feedback
-fade-in = 0.3
-show-failed-attempts
-indicator-idle-visible
-indicator-radius = 150
-indicator-thickness = 10
+# Text and indicator
+text-color=cdd6f4              # Wa
