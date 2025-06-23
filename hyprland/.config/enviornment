@@ -1,0 +1,18 @@
+export XCURSOR_SIZE=24
+export HYPRCURSOR_SIZE=24
+export LIBVA_DRIVER_NAME=nvidia
+export GBM_BACKEND-nvidia-drm
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
+export __GL_VRR_ALLOWED=0
+export QT_CURSOR_SIZE=24
+export QT_QPA_PLATFORM=wayland
+export QT_QPA_PLATFORMTHEME=qt5ct
+
+# Cursor + Wayland basics
+export XDG_CURRENT_DESKTOP=Hyprland
+export XDG_SESSION_TYPE=wayland
+export XCURSOR_SIZE=24
+
+# Video acceleration only while Hyprland is running
+export LIBVA_DRIVER_NAME=nvidia
+export VDPAU_DRIVER=nvidia
