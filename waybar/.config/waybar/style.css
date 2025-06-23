@@ -10,8 +10,6 @@
 window#waybar {
   background: @background-darker;
   color: @foreground;
-  border-bottom: 2px solid @selection;
-  border-radius: 12px;
   box-shadow: none;
   opacity: 1.0;
 }

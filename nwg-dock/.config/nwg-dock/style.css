@@ -1,9 +1,7 @@
 window {
-  background: #282a36; /* Dracula background */
-  border-radius: 16px;  /* Rounder corners */
-  border-style: none;
-  border-width: 1px;
-  border-color: #44475a;
+  background: rgba(24, 24, 37, 0.8);
+  border-radius: 16px;
+  border: 1px solid #1e1e2e;
 }
 
 #box {
@@ -11,29 +9,25 @@ window {
 }
 
 #active {
-  border-bottom: solid 2px;
-  border-color: #bd93f9; /* Dracula purple for active indicator */
+  border-bottom: 2px solid #cba6f7;  /* active app indicator */
 }
 
 button, image {
   background: none;
-  border-style: none;
+  border: none;
   box-shadow: none;
-  color: #f8f8f2; /* Dracula foreground */
+  color: #cdd6f4;
 }
 
 button {
   padding: 6px;
-  margin-left: 6px;
-  margin-right: 6px;
-  border-radius: 12px; /* More rounded buttons */
-  color: #f8f8f2;
+  margin: 0 6px;
+  border-radius: 12px;
   font-size: 13px;
 }
 
 button:hover {
-  background-color: #44475a; /* Dracula selection */
-  border-radius: 12px;
+  background-color: rgba(203, 166, 247, 0.1);  /* subtle hover */
 }
 
 button:focus {
