@@ -1,0 +1,32 @@
+name: Auto Tag on Merge to Main
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [main]
+
+jobs:
+  rolling-tag:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Git user
+        run: |
+          git config user.name "VintageTechie Bot"
+          git config user.email "bot@vintagetechie.com"
+
+      - name: Generate and push rolling tag
+        run: |
+          DATE=$(date +'%Y.%m.%d')
+          COUNT=$(git tag --list "$DATE.*" | wc -l)
+          VERSION="$DATE.$((COUNT + 1))"
+          HASH=$(git rev-parse --short HEAD)
+          TAG="$VERSION-dev+$HASH"
+
+          echo "Creating tag: $TAG"
+          git tag "$TAG"
+          git push origin "$TAG"
