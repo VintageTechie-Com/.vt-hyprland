@@ -1,15 +1,15 @@
-@import "colors.css";
+@import url("file:///home/john/.config/vt-theme/colors.css");
 
 * {
   font-family: "MesloLGS Nerd Font", "Font Awesome 6 Free", "Font Awesome 6 Brands", "Adwaita Mono", monospace;
   font-size: 16px;
   font-weight: normal;
-  color: @foreground;
+  color: @text;
 }
 
 window#waybar {
-  background: @background-darker;
-  color: @foreground;
+  background: @background;
+  color: @text;
   box-shadow: none;
   opacity: 1.0;
 }
@@ -22,25 +22,30 @@ window#waybar {
 /******************* Workspaces *******************/
 #workspaces button {
   padding: 0 10px;
-  background: @selection;         /* darker tab */
-  color: @foreground;
+  background: @surface0;
+  color: @text;
   border-radius: 8px;
   transition: color 0.2s ease-in-out;
 }
 
 #workspaces button:hover {
-  background-color: rgba(61, 174, 233, 0.1);
-  color: #3daee9;
+  background-color: @accentAlpha;
+  color: @accent;
 }
 
 #workspaces button.active {
-  background: @comment;           /* lighter active tab */
-  color: @background;
+  background: @accent;
+  color: #000000;
 }
+
+#workspaces button.active * {
+  color: #000000;  /* ensure children (like labels) are also black */
+}
+
 
 #workspaces button.urgent {
   background: @red;
-  color: @foreground;
+  color: @text;
 }
 
 /******************* Generic buttons *******************/
@@ -52,7 +57,7 @@ button {
 }
 
 button:hover {
-  color: #3daee9;                   /* subtle hover for all clickable widgets */
+  color: @accent;
 }
 
 /******************* Core modules *******************/
@@ -65,17 +70,17 @@ button:hover {
 #temperature,
 #temperature.cpu,
 #custom-nvidia {
-  color: @foreground;
+  color: @text;
   font-weight: normal;
   padding-right: 12px;
 }
 
 #tray {
-  background: rgba(40, 40, 40, 0.9);
+  background: @surface0;
   border-radius: 8px;
   padding: 4px;
   margin: 0 8px;
-  border: 0px solid #444;
+  border: 1px solid @accent;
 }
 
 #backlight,
@@ -86,7 +91,7 @@ button:hover {
   margin: 2px 4px;
   padding: 0 6px;
   border-radius: 12px;
-  background-color: @selection;
+  background-color: @surface0;
 }
 
 /******************* Clock *******************/
@@ -122,12 +127,12 @@ button:hover {
   min-height: 13px;
   min-width: 80px;
   border-radius: 6px;
-  background-color: #1e1f29; /* solid */
+  background-color: @surface0;
 }
 
 #pulseaudio-slider highlight {
   border-radius: 6px;
-  background-color: @comment;
+  background-color: @accent;
 }
 
 /******************* Power Profiles *******************/
@@ -140,7 +145,7 @@ button:hover {
 
 #custom-power:hover,
 #power-profiles-daemon:hover {
-  color: #3daee9;
+  color: @accent;
 }
 
 #power-profiles-daemon.performance {
@@ -155,13 +160,13 @@ button:hover {
 
 /******************* Taskbar *******************/
 #taskbar button.active {
-  background: @purple;
+  background: @accent;
   color: @background;
   border-radius: 12px;
 }
 
 #taskbar button:hover {
-  color: #3daee9;
+  color: @accent;
 }
 
 /******************* Launcher & Drawer *******************/
@@ -190,8 +195,8 @@ button:hover {
 #tray:hover,
 #custom-launcher:hover,
 .drawer-button:hover {
-  background-color: rgba(61, 174, 233, 0.1);
-  color: #3daee9;
+  background-color: @accentAlpha;
+  color: @accent;
 }
 
 .drawer-button {
@@ -199,13 +204,13 @@ button:hover {
   margin-right: 16px;
   padding-left: 12px;
   padding-right: 12px;
-  background-color: @selection;
-  color: @foreground;
+  background-color: @surface0;
+  color: @text;
   border-radius: 12px;
   font-weight: bold;
   font-family: "Font Awesome 6 Free", "MesloLGS Nerd Font", monospace;
 }
 
 .drawer-button:hover {
-  color: #3daee9;
+  color: @accent;
 }
