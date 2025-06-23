@@ -1,9 +1,12 @@
-name: Auto Tag on Merge to Main
+name: Auto Tag on Merge to Master
 
 on:
   pull_request:
     types: [closed]
     branches: [master]
+
+permissions:
+  contents: write
 
 jobs:
   rolling-tag:
@@ -11,8 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Set up Git user
         run: |
@@ -27,6 +29,6 @@ jobs:
           HASH=$(git rev-parse --short HEAD)
           TAG="$VERSION-dev+$HASH"
 
-          echo "Creating tag: $TAG"
+          echo "Tagging with: $TAG"
           git tag "$TAG"
-          git push origin "$TAG"
+          git push origin refs/tags/"$TAG"
