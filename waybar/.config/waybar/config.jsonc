@@ -4,11 +4,11 @@
   // -------------------------------------------------------------------------
   "layer": "top",
   "position": "top",
-  "height": 40,
+  "height": 38,
   "margin-left": 10,
   "margin-bottom": 0,
   "margin-right": 10,
-  "spacing": 8, // Gaps between modules (4px)
+  "spacing": 10, // Gaps between modules (4px)
   "modules-left": [
     "custom/launcher",
     "hyprland/workspaces"
