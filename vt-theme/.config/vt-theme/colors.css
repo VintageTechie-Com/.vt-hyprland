@@ -1,7 +1,7 @@
-@define-color background       rgba(24, 24, 37, 0.8);   /* mantle: #181825 */
-@define-color surface0         rgba(30, 30, 46, 1.0);   /* base:   #1e1e2e */
-@define-color text             rgba(205, 214, 244, 1.0); /* text:   #cdd6f4 */
-@define-color textAlpha        rgba(205, 214, 244, 0.4);
+@define-color background       rgba(24, 24, 37, 0.0);   /* mantle: #181825 */
+@define-color surface0         rgba(30, 30, 46, 0.0);   /* base:   #1e1e2e */
+@define-color text             rgba(255, 255, 255, 1.0); /* text:   #cdd6f4 */
+@define-color textAlpha        rgba(255, 255, 255, 0.5);
 
 @define-color accent           rgba(137, 180, 250, 1.0); /* blue */
 @define-color accentAlpha      rgba(137, 180, 250, 0.6);
