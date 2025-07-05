@@ -1,0 +1,69 @@
+[global]
+    ### ── Appearance (unchanged) ─────────────────────────────────────
+    font                = Fira Sans 10
+    background          = "#181825"          # mantle
+    foreground          = "#CDD6F4"          # text
+    frame_color         = "#89B4FA"          # accent
+    separator_color     = frame
+    padding             = 10
+    horizontal_padding  = 10
+    frame_width         = 2
+    separator_height    = 2
+    corner_radius       = 10
+    transparency        = 10
+    offset              = 30x50
+    monitor             = 0
+    follow              = mouse
+    word_wrap           = yes
+    markup              = full
+    format              = "<b>%s</b>\n%b"
+    alignment           = left
+    vertical_alignment  = center
+    timeout             = 5
+
+    ### ── Icon support (NEW) ─────────────────────────────────────────
+    # 1. Where to look for icons
+    icon_path           = /usr/share/icons/Papirus-Dark/32x32/status:/usr/share/icons/Papirus-Dark/32x32/devices:/usr/share/icons/Papirus-Dark/32x32/apps
+    #    ^ Add as many colon-separated folders as you like.
+    #
+    # 2. Theme-aware lookup (optional; falls back to icon_path above)
+    icon_theme          = Papirus-Dark
+    #
+    # 3. How and where to draw the icon
+    icon_position       = left          # left, right, off, or top
+    max_icon_size       = 64            # px; scales large icons down
+    min_icon_size       = 32            # px; scales tiny icons up
+    #
+    # 4. Per-urgency overrides (size, hide, or recolor if you wish)
+    #    -> see sections below
+
+    ### ── Other global options ──────────────────────────────────────
+    show_indicators     = yes
+    indicate_hidden     = yes
+    ignore_newline      = no
+    min_notification_width  = 200
+    max_notification_width  = 450
+
+# ────────────────────────────────────────────────────────────────────
+# URGENCY LEVELS
+# ────────────────────────────────────────────────────────────────────
+[urgency_low]
+    background   = "#1E1E2E"   # surface0
+    foreground   = "#A6ADC8"
+    frame_color  = "#313244"
+    timeout      = 4
+    # icon_position can be overridden here if desired
+
+[urgency_normal]
+    background   = "#1E1E2E"
+    foreground   = "#CDD6F4"
+    frame_color  = "#89B4FA"
+    timeout      = 6
+
+[urgency_critical]
+    background   = "#1E1E2E"
+    foreground   = "#F38BA8"   # red
+    frame_color  = "#F38BA8"
+    timeout      = 0           # stay until dismissed
+    # Optionally hide icons for critical notices:
+    # icon_position = off
