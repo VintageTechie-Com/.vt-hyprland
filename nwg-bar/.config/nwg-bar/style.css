@@ -1,0 +1,43 @@
+/* vt-Hyprland theme for nwg-bar – GTK-compatible CSS  */
+
+/* Outer translucent frame ------------------------------------------------ */
+#outer-box {
+    background-color: rgba(24,26,27,0.92);  /* charcoal w/ alpha */
+    border: 2px solid #89dceb;              /* teal accent */
+    border-radius: 22px;
+    padding: 20px;                          /* space before buttons */
+}
+
+/* Container that actually holds the buttons ------------------------------ */
+#inner-box {
+    background-color: transparent;
+}
+
+/* Generic button styling -------------------------------------------------- */
+button {
+    background-color: #1e1e2e;
+    border: 2px solid #45475a;
+    border-radius: 18px;
+    padding: 20px;
+    margin: 18px;
+    min-width: 140px;
+    min-height: 140px;
+}
+
+/* Hover state */
+button:hover {
+    background-color: #313244;
+    border-color: #f38ba8;                  /* pink hover accent */
+}
+
+/* Icon inside button */
+image {
+    margin-bottom: 8px;                     /* spacing above label */
+}
+
+/* Text label */
+label {
+    color: #cdd6f4;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 17pt;                        /* larger, readable */
+}

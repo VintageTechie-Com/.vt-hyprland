@@ -1,33 +1,51 @@
+/* ===== vt-Hyprland wlogout style ===== */
+/* ===== vt-Hyprland wlogout style ===== */
+
 * {
   background-image: none;
-  font-family: "JetBrainsMono Nerd Font";
-  font-size: 14pt;
-  color: #f8f8f2;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 16pt;                 /* larger default text */
+  color: #cdd6f4;                  /* foreground */
 }
 
 window {
-  background-color: rgba(40, 42, 54, 0.95);
-  border-radius: 20px;
+  background-color: rgba(24, 26, 27, 0.92); /* translucent charcoal */
+  border-radius: 22px;
+  border: 2px solid #89dceb;       /* teal accent */
 }
 
+/* ---- Buttons ----------------------------------------------------------- */
 button {
-  background-color: #282a36;
-  border: 2px solid #6272a4;
-  border-radius: 16px;
-  margin: 20px;
-  padding: 10px;
+  min-width: 160px;
+  min-height: 160px;
+
+  display: flex;
+  flex-direction: column;          /* icon above label */
+  align-items: center;
+  justify-content: center;
+
+  background-color: #1e1e2e;
+  border: 2px solid #45475a;
+  border-radius: 18px;
+  margin: 18px;
+  padding: 20px;
+
+  transition:
+    transform      0.15s ease,
+    background     0.15s ease,
+    border-color   0.15s ease;
 }
 
 button:hover {
-  background-color: #44475a;
-  border-color: #bd93f9;
+  background-color: #313244;
+  border-color: #f38ba8;           /* pink hover accent */
+  transform: scale(1.05);
 }
 
-image {
-  margin-bottom: 10px;
-}
+/* ---- Icon & label spacing --------------------------------------------- */
+image { margin-bottom: 10px; }
 
 label {
-  margin-top: 5px;
+  font-size: 18pt;                 /* bigger label */
+  margin: 0;
 }
-
