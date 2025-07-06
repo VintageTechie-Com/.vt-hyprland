@@ -123,7 +123,7 @@
   "custom/power": {
     "format": "⏻",
     "tooltip": "Power Menu",
-    "on-click": "wlogout"
+    "on-click": "nwg-bar -i 64 -f"
   },
   "temperature#cpu": {
     "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
