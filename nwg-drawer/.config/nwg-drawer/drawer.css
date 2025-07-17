@@ -1,25 +1,30 @@
 window {
-    background-color: rgba(24, 24, 37, 0.8);   /* Waybar-matching bg */
-    color: #cdd6f4;                             /* text */
-    border-radius: 10px;
+    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.92));
+    color: #ffffff;
+    border-radius: 12px;
+    border: 2px solid #89b4fa;  /* blue accent border */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    padding: 10px;
 }
 
 entry {
-    background-color: rgba(36, 36, 50, 0.4);
-    color: #cdd6f4;
-    padding: 4px 6px;
-    border-radius: 4px;
+    background-color: rgba(40, 40, 40, 0.4);
+    color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 button, image {
     background: none;
     border: none;
-    border-radius: 6px;
-    color: #cdd6f4;
+    border-radius: 10px;
+    color: #ffffff;
 }
 
 button:hover {
-    background-color: rgba(203, 166, 247, 0.1);  /* hover effect */
+    background: linear-gradient(to bottom, rgba(100, 100, 100, 0.2), rgba(30, 30, 30, 0.5));
+    color: #89b4fa;
 }
 
 #category-button {
@@ -28,17 +33,17 @@ button:hover {
 
 #pinned-box {
     padding-bottom: 5px;
-    border-bottom: 1px dotted #cba6f7;
+    border-bottom: 1px dotted #89b4fa;
 }
 
 #files-box {
     padding: 5px;
-    border: 1px dotted #cba6f7;
+    border: 1px dotted #89b4fa;
     border-radius: 12px;
 }
 
 #math-label {
     font-weight: bold;
     font-size: 16px;
-    color: #cba6f7;
+    color: #f38ba8; /* pink accent */
 }
