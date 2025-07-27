@@ -2,8 +2,8 @@
 @define-color surface0 rgba(255, 255, 255, 0.06);
 @define-color text rgba(255, 255, 255, 1.0);
 @define-color textAlpha rgba(255, 255, 255, 0.5);
-@define-color accent rgba(137, 180, 250, 1.0);
-@define-color accentAlpha rgba(137, 180, 250, 0.15);
+@define-color accent rgba(30,120,168,1);
+@define-color accentAlpha rgba(30, 120, 168,0.15);
 @define-color red rgba(243, 139, 168, 1.0);
 @define-color yellow rgba(249, 226, 175, 1.0);
 @define-color green rgba(166, 227, 161, 1.0);
