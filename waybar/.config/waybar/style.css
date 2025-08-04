@@ -1,9 +1,9 @@
-@define-color background rgba(10, 10, 10, 0.95);
+@define-color background rgba(0, 0, 0, 0.35);
 @define-color surface0 rgba(255, 255, 255, 0.06);
 @define-color text rgba(255, 255, 255, 1.0);
 @define-color textAlpha rgba(255, 255, 255, 0.5);
-@define-color accent rgba(30,120,168,1);
-@define-color accentAlpha rgba(30, 120, 168,0.15);
+@define-color accent rgba(30, 120, 168, 1.0);
+@define-color accentAlpha rgba(30, 120, 168, 0.15);
 @define-color red rgba(243, 139, 168, 1.0);
 @define-color yellow rgba(249, 226, 175, 1.0);
 @define-color green rgba(166, 227, 161, 1.0);
@@ -11,82 +11,78 @@
 * {
   font-family: "MesloLGS Nerd Font", "Font Awesome 6 Free", "Font Awesome 6 Brands", "Adwaita Mono", monospace;
   font-size: 16px;
-  font-weight: normal;
   color: @text;
 }
 
 window#waybar {
-  background: linear-gradient(to bottom, rgba(20, 20, 20, 0.95), rgba(5, 5, 5, 0.92));
-  border-radius: 10px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6);
-  opacity: 1.0;
+  background: @background;
+  border-radius: 12px;
+  padding: 4px 10px;
+  margin: 6px;
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.8),
+    inset 0 2px 6px rgba(0, 0, 0, 0.4),
+    inset 0 -1px 2px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.6);
 }
 
-/******************* Workspaces *******************/
+/* Workspaces */
 #workspaces button {
-  padding: 0 20px;
-  background: linear-gradient(to bottom, rgba(60, 60, 60, 0.3), rgba(20, 20, 20, 0.9));
-  color: @text;
-  border-radius: 10px;
-  margin: 0 2;
+  background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 4px 12px;
+  margin: 2px;
+  border-radius: 10px;
+  color: @text;
 }
 
-#workspaces button:hover {
+#workspaces button.active,
+#workspaces button:checked {
+  background: @accent;
+  color: #000000;
+  font-weight: bold;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hover */
+#workspaces button:hover,
+button:hover {
   background-color: @accentAlpha;
   color: @accent;
 }
 
-#workspaces button.active {
-  background: @accent;
-  color: #000000;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-#workspaces button.urgent {
-  background: @red;
-  color: @text;
-}
-
-/******************* Generic buttons *******************/
-button {
-  border: none;
-  border-radius: 12px;
-  box-shadow: none;
-  transition: color 0.2s ease-in-out;
-}
-
-button:hover {
-  color: @accent;
-}
-
-/******************* Modules *******************/
-#pulseaudio,
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#temperature.cpu,
-#custom-nvidia,
-#backlight,
-#wireplumber,
-#network,
-#mode,
-#scratchpad,
-#idle_inhibitor,
-#custom-power,
-#power-profiles-daemon,
-#tray {
-  background: linear-gradient(to bottom, rgba(40, 40, 40, 0.6), rgba(10, 10, 10, 0.9));
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 0 8px;
+/* Modules */
+#pulseaudio, #clock, #battery, #cpu, #memory, #disk,
+#temperature, #temperature.cpu, #custom-nvidia,
+#backlight, #wireplumber, #network, #mode, #scratchpad,
+#idle_inhibitor, #custom-power, #power-profiles-daemon, #tray {
+  background-color: transparent;
+  padding: 4px 10px;
+  border-radius: 10px;
   margin: 2px 4px;
 }
 
-/******************* Hover Accent *******************/
+/* Special Modules */
+#clock.date { color: @yellow; }
+#power-profiles-daemon.performance { color: @red; }
+#power-profiles-daemon.balanced { color: @yellow; }
+#power-profiles-daemon.power-saver { color: @green; }
+
+/* Drawer / Launcher (if used) */
+.drawer-button {
+  margin: 0 10px;
+  padding: 4px 12px;
+  background-color: @surface0;
+  color: @text;
+  border-radius: 12px;
+  font-weight: bold;
+  font-family: "Font Awesome 6 Free", "MesloLGS Nerd Font", monospace;
+}
+
+.drawer-button:hover {
+  color: @accent;
+  background-color: @accentAlpha;
+}
 #pulseaudio:hover,
 #clock:hover,
 #battery:hover,
@@ -104,58 +100,8 @@ button:hover {
 #idle_inhibitor:hover,
 #custom-power:hover,
 #power-profiles-daemon:hover,
-#tray:hover,
-#custom-launcher:hover,
-.drawer-button:hover {
+#tray:hover {
   background-color: @accentAlpha;
   color: @accent;
   border-radius: 10px;
-}
-
-/******************* Clock *******************/
-#clock.date {
-  color: @yellow;
-}
-
-/******************* Power Profiles *******************/
-#power-profiles-daemon.performance {
-  color: @red;
-}
-#power-profiles-daemon.balanced {
-  color: @yellow;
-}
-#power-profiles-daemon.power-saver {
-  color: @green;
-}
-
-/******************* Taskbar *******************/
-#taskbar button.active {
-  background: @accent;
-  color: @background;
-  border-radius: 12px;
-}
-
-#taskbar button:hover {
-  color: @accent;
-}
-
-/******************* Drawer / Launcher *******************/
-#custom-launcher {
-  padding: 0 10px;
-}
-
-.drawer-button {
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-left: 12px;
-  padding-right: 12px;
-  background-color: @surface0;
-  color: @text;
-  border-radius: 12px;
-  font-weight: bold;
-  font-family: "Font Awesome 6 Free", "MesloLGS Nerd Font", monospace;
-}
-
-.drawer-button:hover {
-  color: @accent;
 }
