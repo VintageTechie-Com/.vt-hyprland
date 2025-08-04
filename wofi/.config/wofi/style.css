@@ -1,54 +1,38 @@
-window {
-  background-color: #282a36;
-  border-radius: 12px;
-  border: 2px solid #6272a4;
-  font-family: "JetBrainsMono Nerd Font", monospace;
+* {
+  font-family: "MesloLGS Nerd Font", monospace;
   font-size: 16px;
+  color: white;
 }
 
+window {
+  background-color: rgba(10, 10, 10, 0.92);
+  border: 2px solid rgba(30, 120, 168, 0.6);
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65);
+}
 
 #input {
-margin: 5px;
-border: none;
-color: #f8f8f2;
-background-color: #44475a;
+  all: unset;
+  background-color: rgba(40, 40, 40, 0.85);
+  padding: 6px 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
 }
 
-#inner-box {
-margin: 5px;
-border: none;
-background-color: #282a36;
-}
-
-#outer-box {
-margin: 5px;
-border: none;
-background-color: #282a36;
-}
-
-#scroll {
-margin: 0px;
-border: none;
-}
-
-#text {
-margin: 5px;
-border: none;
-color: #f8f8f2;
-} 
-
-#entry.activatable #text {
-color: #282a36;
-}
-
-#entry > * {
-color: #f8f8f2;
+#entry {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 6px 10px;
+  margin-bottom: 6px;
 }
 
 #entry:selected {
-background-color: #44475a;
+  background-color: rgba(30, 120, 168, 0.3);
+  border: 1px solid rgba(30, 120, 168, 0.8);
 }
 
 #entry:selected #text {
-font-weight: bold;
+  font-weight: bold;
+  color: white;
 }
