@@ -1,0 +1,11 @@
+#!/bin/bash
+
+WALLPAPER_DIR="$HOME/.config/Backgrounds"  # Corrected ~ expansion
+SELECTED=$(yad --file --title="Choose Wallpaper" --filename="${WALLPAPER_DIR}/" --file-filter="*.jpg *.png *.jpeg")
+
+if [[ -n "$SELECTED" ]]; then
+    MONITOR=$(hyprctl monitors -j | jq -r '.[0].name')
+    hyprctl hyprpaper preload "$SELECTED"
+    sleep 0.2
+    hyprctl hyprpaper wallpaper "$MONITOR,$SELECTED"
+fi
