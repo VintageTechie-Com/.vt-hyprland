@@ -5,7 +5,7 @@ After=graphical-session.target
 PartOf=graphical-session.target
 
 [Service]
-ExecStart=/usr/bin/nwg-dock-hyprland -d
+ExecStart=/usr/bin/nwg-dock-hyprland -d -p bottom -o DP-1 -l top -x -i 48 -hd 30
 Restart=on-failure
 RestartSec=2
 
