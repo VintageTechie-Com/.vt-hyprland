@@ -55,7 +55,7 @@ label {
   margin: 8px;
   padding: 6px 8px;
   border-radius: 8px;
-  background-color: @hover;
+  background-color: @bg;
   color: @fg;
   border: none;
 }
