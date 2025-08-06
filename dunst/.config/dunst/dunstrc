@@ -1,44 +1,77 @@
-[global]
-font = MesloLGS Nerd Font 12
-frame_width = 2
-frame_color = "#1e78a8"
-separator_color = frame
-padding = 16
-horizontal_padding = 24
-corner_radius = 12
-background = "#0a0a0aE8"
-foreground = "#ffffff"
-transparency = 10
-blur_radius = 12
-offset = 20x20
-separator_height = 2
-line_height = 0
-word_wrap = yes
-format = "<b>%s</b>\n%b"
-markup = full
-icon_position = left
-indicate_hidden = yes
-stack_duplicates = true
-show_indicators = yes
-hide_duplicate_count = yes
-enable_recursive_icon_lookup = true
+[[global]
+monitor = 0
 follow = mouse
-layer = top
-mouse_left_click = close_current
-mouse_middle_click = do_action
-mouse_right_click = close_all
+width = 400
+height = 300
+origin = top-right
+offset = 20x20
+scale = 0
+notification_limit = 5
 
+# Look & Feel
+font = MesloLGS Nerd Font 14
+transparency = 0
+corner_radius = 12
+padding = 8
+horizontal_padding = 12
+frame_width = 2
+frame_color = "#1E78A8"
+separator_height = 2
+separator_color = frame
+
+# Colors (glossy look, but now opaque)
+background = "#000000"  # fully opaque black
+foreground = "#FFFFFF"
+
+# Icons
+icon_position = left
+icon_theme = Papirus
+max_icon_size = 64
+
+# Timeouts
+idle_threshold = 120
+show_age_threshold = 60
+sticky_history = yes
+history_length = 20
+markup = full
+
+# Mouse
+clickable = true
+mouse_left_click = close_current
+mouse_middle_click = close_all
+mouse_right_click = context
+
+# Dmenu / history
+browser = brave
+dmenu = rofi -dmenu -p dunst:
+dmenu_shortcut = ctrl+space
+context = ctrl+shift+period
+
+# Startup
+startup_notification = false
+
+# Legacy compatibility
+force_xwayland = false
+
+# Wayland (Hyprland): Optional shadow + blur (now less useful since not transparent)
+# windowrulev2 = blur, class:^(Dunst)$
+# windowrulev2 = opacity 1.0 override 1.0 override, class:^(Dunst)$
+
+# Per-Urgency Styles
 [urgency_low]
-background = "#0a0a0aCC"
-foreground = "#c0c0c0"
-frame_color = "#44475a"
+background = "#000000"
+foreground = "#FFFFFF"
+frame_color = "#1E78A8"
+timeout = 4
 
 [urgency_normal]
-background = "#0a0a0aF0"
-foreground = "#ffffff"
-frame_color = "#1e78a8"
+background = "#000000"
+foreground = "#FFFFFF"
+frame_color = "#1E78A8"
+timeout = 6
 
 [urgency_critical]
-background = "#1a0000"
-foreground = "#ff6b6b"
-fram
+background = "#000000"
+foreground = "#FFFFFF"
+frame_color = "#F38BA8"
+timeout = 0

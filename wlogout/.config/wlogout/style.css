@@ -1,21 +1,20 @@
-/* ===== Glossy Black Theme: wlogout ===== */
+/* ===== Glossy Unified Theme: wlogout ===== */
 
 * {
   background-image: none;
-  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-family: "MesloLGS Nerd Font", monospace;
   font-size: 16pt;
   color: #ffffff;
 }
 
 window {
   background-color: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.92));
-  border-radius: 22px;
-  border: 2px solid #89b4fa;  /* blue accent to match dock */
+  border-radius: 16px;
+  border: 2px solid #89b4fa; /* matches nwg-dock accent */
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7);
   padding: 24px;
 }
 
-/* ---- Buttons ----------------------------------------------------------- */
 button {
   min-width: 160px;
   min-height: 160px;
@@ -27,7 +26,7 @@ button {
 
   background: linear-gradient(to bottom, rgba(50, 50, 50, 0.3), rgba(5, 5, 5, 0.9));
   border: 2px solid rgba(255, 255, 255, 0.05);
-  border-radius: 18px;
+  border-radius: 16px;
   margin: 18px;
   padding: 20px;
 
@@ -40,7 +39,7 @@ button {
 
 button:hover {
   background: linear-gradient(to bottom, rgba(100, 100, 100, 0.4), rgba(30, 30, 30, 0.9));
-  border-color: #f38ba8;  /* pink hover accent */
+  border-color: #f38ba8; /* matches critical/hover accent */
   transform: scale(1.05);
 }
 

@@ -1,38 +1,39 @@
-* {
-  font-family: "MesloLGS Nerd Font", monospace;
-  font-size: 16px;
-  color: white;
-}
-
 window {
-  background-color: rgba(10, 10, 10, 0.92);
-  border: 2px solid rgba(30, 120, 168, 0.6);
-  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 16px;
   padding: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65);
+  margin: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
 #input {
-  all: unset;
-  background-color: rgba(40, 40, 40, 0.85);
-  padding: 6px 10px;
-  margin-bottom: 10px;
+  margin: 8px;
+  padding: 6px 8px;
   border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: white;
+  border: none;
+}
+
+#input:focus {
+  background-color: rgba(255, 255, 255, 0.12);
+  outline: none;
 }
 
 #entry {
-  background-color: rgba(255, 255, 255, 0.06);
-  border-radius: 8px;
-  padding: 6px 10px;
-  margin-bottom: 6px;
+  padding: 6px;
+  border-radius: 6px;
+  margin: 2px;
 }
 
 #entry:selected {
-  background-color: rgba(30, 120, 168, 0.3);
-  border: 1px solid rgba(30, 120, 168, 0.8);
+  background-color: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
 }
 
-#entry:selected #text {
-  font-weight: bold;
-  color: white;
+#text {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "MesloLGS Nerd Font", monospace;
+  font-size: 14px;
 }
