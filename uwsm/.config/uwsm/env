@@ -25,3 +25,5 @@ export LIBGL_ALWAYS_SOFTWARE=0
 # Cursor and scaling defaults
 export XCURSOR_SIZE=24
 export XCURSOR_THEME=Bibata-Modern-Classic
+
+export SSH_AUTH_SOCK=${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh
