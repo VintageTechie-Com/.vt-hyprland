@@ -140,7 +140,7 @@ Variants {
 
       // ---- RIGHT-SIDE WIDGETS ----
 
-      // Tray (to the LEFT of sound), borderless
+      // Tray (to the LEFT of sound) — smart coords + Steam fallback + no overlap
       Rectangle {
         id: trayRect
         radius: 10
@@ -148,7 +148,9 @@ Variants {
         height: pillH
         Layout.alignment: Qt.AlignVCenter
         property int pad: 8
-        width: Math.max(pillH, trayRow.implicitWidth + pad*2)
+        Layout.preferredWidth: Math.max(pillH, trayRow.implicitWidth + pad*2)
+        Layout.minimumWidth:  Math.max(pillH, trayRow.implicitWidth + pad*2)
+        clip: true
 
         Row {
           id: trayRow
@@ -158,7 +160,7 @@ Variants {
           Repeater {
             model: SystemTray.items
             delegate: Item {
-              width: Math.round(pillH * trayIconScale)   // smaller icons
+              width: Math.round(pillH * trayIconScale)
               height: width
 
               IconImage {
@@ -170,10 +172,74 @@ Variants {
                 id: ma
                 anchors.fill: parent
                 hoverEnabled: true
+                acceptedButtons: Qt.LeftButton | Qt.RightButton | Qt.MiddleButton
                 onEntered: trayRect.color = hoverColor
                 onExited:  trayRect.color = "transparent"
-                onClicked: function() {
-                  if (modelData && modelData.activate) modelData.activate();
+
+                function globalPos(ev) {
+                  const scene = ma.mapToItem(null, ev.x, ev.y);
+                  return (ma.window && ma.window.mapToGlobal)
+                         ? ma.window.mapToGlobal(scene)
+                         : scene;
+                }
+
+                function isSteam() {
+                  const id = (modelData.id ?? "").toString().toLowerCase();
+                  const name = (modelData.tooltipTitle ?? modelData.title ?? "").toLowerCase();
+                  return id.indexOf("steam") !== -1 || name.indexOf("steam") !== -1;
+                }
+
+                function wantsCoordsFor(fn) {
+                  const arity = (fn && typeof fn.length === "number") ? fn.length : 0;
+                  return arity >= 2 || isSteam();
+                }
+
+                function callSmart(fn, ev) {
+                  if (!fn) return false;
+                  try {
+                    if (wantsCoordsFor(fn)) {
+                      const g = globalPos(ev);
+                      fn(Math.round(g.x), Math.round(g.y));
+                    } else {
+                      fn();
+                    }
+                    return true;
+                  } catch (e1) {
+                    try { fn(); return true; } catch (e2) { return false; }
+                  }
+                }
+
+                function steamShowMain() {
+                  // 1) try focusing any Steam window; 2) open main if nothing to focus
+                  Quickshell.execDetached(["bash","-lc",
+                    "hyprctl dispatch focuswindow \"class:^(steam|Steam|steamwebhelper)$\" || " +
+                    "hyprctl dispatch focuswindow \"title:^(.*Steam.*)$\" || " +
+                    "xdg-open 'steam://open/main' >/dev/null 2>&1 || true"
+                  ]);
+                }
+
+                onClicked: function(ev) {
+                  if (!modelData) return;
+
+                  if (ev.button === Qt.RightButton) {
+                    if (callSmart(modelData.openContextMenu, ev)) return;
+                    if (callSmart(modelData.secondaryActivate, ev)) return;
+                    if (isSteam()) { steamShowMain(); return; }
+                    callSmart(modelData.activate, ev);
+                    return;
+                  }
+
+                  if (ev.button === Qt.MiddleButton) {
+                    if (callSmart(modelData.secondaryActivate, ev)) return;
+                    if (isSteam()) { steamShowMain(); return; }
+                    callSmart(modelData.activate, ev);
+                    return;
+                  }
+
+                  // Left-click
+                  if (callSmart(modelData.activate, ev)) return;
+                  if (isSteam()) { steamShowMain(); return; }
+                  callSmart(modelData.openContextMenu, ev);
                 }
               }
 
@@ -364,7 +430,7 @@ Variants {
       id: centerBlock
       anchors.centerIn: parent
       spacing: 14
-      z: 1 // sits above the background; tiny footprint, so it won't block clicks elsewhere
+      z: 1
 
       SystemClock { id: centerClock; precision: SystemClock.Seconds }
       Text {
