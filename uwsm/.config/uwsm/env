@@ -1,0 +1,29 @@
+# ~/.config/uwsm/env
+# Global defaults for all UWSM sessions
+# Wayland-first toolkit settings
+export GDK_BACKEND=wayland,x11
+export CLUTTER_BACKEND=wayland
+export SDL_VIDEODRIVER=wayland
+export QT_QPA_PLATFORM=wayland
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+
+# Electron/Chromium Wayland support
+export NIXOS_OZONE_WL=1
+export OZONE_PLATFORM=wayland
+export OZONE_PLATFORM_HINT=auto
+
+# NVIDIA / VA-API / GBM configuration
+export LIBVA_DRIVER_NAME=nvidia
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
+export GBM_BACKEND=nvidia-drm
+export __GL_GSYNC_ALLOWED=0
+export __GL_VRR_ALLOWED=0
+
+# Software rendering fallback
+export LIBGL_ALWAYS_SOFTWARE=0
+
+# Cursor and scaling defaults
+export XCURSOR_SIZE=24
+export XCURSOR_THEME=Bibata-Modern-Classic
+
+export SSH_AUTH_SOCK=${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh

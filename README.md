@@ -1,4 +1,5 @@
-# Hyprland Dotfiles
+# Hyprland Dotfiles 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J01HKVYF)
 
 These are my personal dotfiles for [Hyprland](https://github.com/hyprwm/Hyprland), focused on performance, clean startup, and a visually cohesive dark aesthetic.
 

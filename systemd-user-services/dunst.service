@@ -1,11 +1,11 @@
 [Unit]
-Description=Sway Notification Center
+Description=Dunst Notification Center
 ConditionEnvironment=HYPRLAND_INSTANCE_SIGNATURE
 After=graphical-session.target
 PartOf=graphical-session.target
 
 [Service]
-ExecStart=/usr/bin/swaync
+ExecStart=/usr/bin/dunst
 Restart=on-failure
 RestartSec=2
 

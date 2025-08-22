@@ -1,0 +1,146 @@
+@define-color bg rgba(0, 0, 0, 0.99);
+@define-color fg rgba(255, 255, 255, 1.0);
+@define-color fgSoft rgba(255, 255, 255, 0.9);
+@define-color fgAlt rgba(255, 255, 255, 0.5);
+@define-color hover rgba(255, 255, 255, 0.10);
+@define-color active rgba(255, 255, 255, 0.15);
+@define-color border rgba(255, 255, 255, 0.1);
+@define-color shadow rgba(255, 255, 255, 0.2);
+@define-color accent rgba(30, 120, 168, 1.0);
+@define-color accentAlpha rgba(30, 120, 168, 0.15);
+
+/* === Shared Base Styles === */
+* {
+  font-family: "MesloLGS Nerd Font", "Font Awesome 6 Free", "Font Awesome 6 Brands", "Adwaita Mono", monospace;
+  font-size: 14px;
+  color: @fg;
+  background: none;
+  border: none;
+}
+
+window {
+  background-color: @bg;
+  border-radius: 16px;
+  padding: 10px;
+  margin: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+button {
+  background: transparent;
+  border-radius: 10px;
+  padding: 6px;
+  margin: 4px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  background-color: @hover;
+  border: 1px solid @border;
+  box-shadow: 0 0 4px @shadow;
+}
+
+button:active {
+  background-color: @active;
+  border: 1px solid @border;
+}
+
+label {
+  color: @fgSoft;
+  font-size: 13px;
+}
+
+/* === Wofi-Specific === */
+#input {
+  margin: 8px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background-color: @bg;
+  color: @fg;
+  border: none;
+}
+
+#input:focus {
+  background-color: @active;
+  outline: none;
+}
+
+#entry {
+  padding: 6px;
+  border-radius: 6px;
+  margin: 2px;
+}
+
+#entry:selected {
+  background-color: @hover;
+  border: 1px solid @border;
+  box-shadow: 0 0 4px @shadow;
+}
+
+#text {
+  color: @fgSoft;
+  font-size: 14px;
+  font-family: "MesloLGS Nerd Font", monospace;
+}
+
+/* === Waybar-Specific === */
+window#waybar {
+  background: @bg;
+  border-radius: 12px;
+  padding: 4px;
+  margin: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+#workspaces button {
+  background: transparent;
+  padding: 4px 10px;
+  margin: 2px;
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
+}
+
+#workspaces button:hover {
+  background-color: @hover;
+  border: 1px solid @border;
+  box-shadow: 0 0 4px @shadow;
+}
+
+#workspaces button.focused {
+  background-color: @accentAlpha;
+  border: 1px solid @accent;
+  color: @accent;
+}
+
+#clock,
+#memory,
+#cpu,
+#temperature,
+#battery,
+#pulseaudio,
+#custom-weather,
+#custom-launcher,
+#custom-power {
+  padding: 0 10px;
+  border-radius: 8px;
+  background-color: transparent;
+}
+
+#custom-launcher:hover,
+#custom-power:hover,
+#pulseaudio:hover {
+  background-color: @hover;
+  border: 1px solid @border;
+  box-shadow: 0 0 4px @shadow;
+}
+
+tooltip {
+  background: @bg;
+  border-radius: 8px;
+  padding: 6px;
+  border: 1px solid @border;
+}
+
+tooltip label {
+  color: @fg;
+}

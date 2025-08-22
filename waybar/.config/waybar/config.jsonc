@@ -4,11 +4,11 @@
   // -------------------------------------------------------------------------
   "layer": "top",
   "position": "top",
-  "height": 40,
-  "margin-left": 10,
+  "height": 38,
+  "margin-left": 12,
   "margin-bottom": 0,
-  "margin-right": 10,
-  "spacing": 8, // Gaps between modules (4px)
+  "margin-right": 12,
+  "spacing": 18, // Gaps between modules (4px)
   "modules-left": [
     "custom/launcher",
     "hyprland/workspaces"
@@ -24,8 +24,8 @@
     //*"pulseaudio/slider",
     "pulseaudio",
     "temperature#cpu",
-     "custom/nvidia",    
-     "memory",
+    "custom/nvidia",    
+ //    "memory",
     "power-profiles-daemon",
     "custom/power"
   ],
@@ -57,7 +57,7 @@
   },
   "tray": {
     "icon-size": 15,
-    "spacing": 5
+    "spacing": 20
   },
   "power-profiles-daemon": {
     "format": "{icon}",
@@ -104,7 +104,7 @@
   "memory": {
     "interval": 5,
     "format": "  {used:0.2f} / {total:0.0f} GB",
-    "on-click": "alacritty -e btop"
+    "on-click": "ghostty -e btop"
   },
   "hyprland/workspaces": {
     "all-outputs": true,
@@ -123,7 +123,7 @@
   "custom/power": {
     "format": "⏻",
     "tooltip": "Power Menu",
-    "on-click": "wlogout"
+    "on-click": "nwg-bar -i 64 -f"
   },
   "temperature#cpu": {
     "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",

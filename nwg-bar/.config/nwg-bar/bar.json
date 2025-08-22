@@ -1,0 +1,8 @@
+[
+  { "name": "lock",      "exec": "gtklock",                "label": "Lock",      "icon": "system-lock-screen" },
+  { "name": "logout",    "exec": "hyprctl dispatch exit",  "label": "Logout",    "icon": "system-log-out"     },
+  { "name": "suspend",   "exec": "systemctl suspend",      "label": "Suspend",   "icon": "system-suspend"     },
+  { "name": "reboot",    "exec": "systemctl reboot",       "label": "Reboot",    "icon": "system-reboot"      },
+  { "name": "hibernate", "exec": "systemctl hibernate",    "label": "Hibernate", "icon": "system-suspend-hibernate" },
+  { "name": "shutdown",  "exec": "systemctl poweroff",     "label": "Shutdown",  "icon": "system-shutdown"    }
+]
