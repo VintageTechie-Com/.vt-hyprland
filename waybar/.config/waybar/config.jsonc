@@ -24,7 +24,7 @@
     //*"pulseaudio/slider",
     "pulseaudio",
     "temperature#cpu",
-     "custom/nvidia",    
+    "custom/nvidia",    
  //    "memory",
     "power-profiles-daemon",
     "custom/power"
