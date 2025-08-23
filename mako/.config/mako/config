@@ -5,17 +5,17 @@ text-color=#ffffff
 border-color=#444444
 
 width=400
-height=200
+height=400
 margin=20
 padding=20
 border-size=2
-border-radius=12
+border-radius=16
 
 font=JetBrainsMono Nerd Font 10
 icons=1
 max-icon-size=64
 
-anchor=top-right
+anchor=top-center
 layer=overlay
 
 default-timeout=5000
