@@ -27,5 +27,5 @@ for service in "$DEST_DIR"/*.service; do
     systemctl --user enable --now "$name"
     echo "✅ Enabled and started: $name"
 done
-
+systemctl --user enable --now hyprpolkitagent.service
 echo "✅ All services installed and activated."
